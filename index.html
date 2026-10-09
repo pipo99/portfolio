@@ -135,8 +135,22 @@ h2 { font-size:clamp(32px, 4vw, 48px); letter-spacing:-.065em; line-height:1.08;
 .contact-actions { display:flex; flex-direction:column; gap:10px; min-width:180px; }
 .contact-actions .button.secondary { background:transparent; color:#f2f6ee; border-color:#465447; }
 .footer { border-top:1px solid var(--line); padding:24px 0 32px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:11px; }
-.mobile-menu { display:none; }
+.mobile-menu { display:none; border:1px solid var(--line); background:var(--surface); color:var(--text); width:42px; height:42px; border-radius:12px; align-items:center; justify-content:center; cursor:pointer; flex:0 0 42px; }
+.mobile-menu svg { width:22px; height:22px; }
+.nav-links a { padding:8px 0; }
+@media (max-width:1000px) {
+ .nav { gap:14px; }
+ .nav-links { gap:15px; font-size:12px; }
+ .brand { flex-shrink:0; }
+}
 @media (max-width:850px) {
+ .nav { position:sticky; }
+ .mobile-menu { display:inline-flex; margin-left:auto; }
+ .nav-links { display:none; position:absolute; top:calc(100% + 1px); left:0; right:0; padding:12px 16px 16px; background:var(--bg); border:1px solid var(--line); border-top:0; border-radius:0 0 18px 18px; box-shadow:0 14px 25px rgba(20,30,50,.08); align-items:stretch; flex-direction:column; gap:2px; font-size:14px; }
+ .nav-links.is-open { display:flex; }
+ .nav-links a { padding:11px 8px; border-radius:9px; }
+ .nav-links a:hover { background:var(--surface-2); }
+ .nav-cta { padding:11px 14px; white-space:nowrap; }
  .hero { grid-template-columns:1fr; gap:35px; padding:55px 0 65px; }
  .hero-art { min-height:390px; }
  .services { grid-template-columns:repeat(2,1fr); }
@@ -151,14 +165,26 @@ h2 { font-size:clamp(32px, 4vw, 48px); letter-spacing:-.065em; line-height:1.08;
 @media (max-width:600px) {
  .wrap { width:min(100% - 30px, 1160px); }
  .nav { padding:12px 0; gap:10px; }
- .nav-links { display:flex; gap:12px; font-size:11px; }
- .brand { gap:7px; font-size:15px; }
+ .brand { gap:7px; font-size:14px; min-width:0; }
  .brand-mark { width:32px; height:32px; flex-basis:32px; border-radius:10px; }
  .brand-mark svg { width:23px; height:23px; }
- .nav-cta { padding:10px 13px; font-size:12px; }
- h1 { font-size:48px; }
+ .mobile-menu { width:38px; height:38px; flex-basis:38px; }
+ .nav-cta { padding:10px 11px; font-size:11px; }
+ h1 { font-size:clamp(39px, 11vw, 48px); overflow-wrap:anywhere; }
+ .rotating-phrase { min-width:0; }
  .hero-copy { font-size:15px; }
- .hero-art { min-height:390px; padding:20px; }
+ .hero-art { min-height:0; padding:18px; border-radius:22px; }
+ .art-top { align-items:flex-start; gap:8px; font-size:9px; }
+ .art-status { padding:5px 7px; white-space:nowrap; font-size:9px; }
+ .art-heading { margin-top:35px; font-size:29px; }
+ .hero-mini-grid { gap:8px; margin-top:22px; }
+ .hero-mini { padding:10px 8px; gap:8px; min-width:0; }
+ .hero-mini .mini-icon { width:29px; height:29px; flex-basis:29px; font-size:15px; }
+ .hero-mini strong { font-size:11px; overflow-wrap:anywhere; }
+ .hero-mini small { font-size:9px; line-height:1.35; }
+ .hero-actions { align-items:stretch; flex-direction:column; }
+ .hero-actions .button { width:100%; }
+ .micro-proof { align-items:flex-start; gap:10px; }
  .art-cards { left:20px; right:20px; bottom:20px; }
  .section { padding:62px 0; }
  .section-head { display:block; }
@@ -166,9 +192,25 @@ h2 { font-size:clamp(32px, 4vw, 48px); letter-spacing:-.065em; line-height:1.08;
  .services, .focus-grid { grid-template-columns:1fr; }
  .hero-mini-grid { grid-template-columns:1fr 1fr; }
  .service { min-height:220px; }
+ .service, .plan, .focus-card { padding:21px; }
+ .plan { min-height:0; }
+ .plan .button { width:100%; }
+ .about-stats { gap:20px; }
+ .contact-panel { padding:25px 20px; border-radius:22px; }
+ .contact-email { font-size:clamp(17px, 5vw, 22px); }
+ .contact-actions { flex-direction:column; }
+ .contact-actions .button { width:100%; }
  .step { grid-template-columns:35px 1fr; gap:12px; }
  .contact { padding-bottom:50px; }
  .footer { flex-direction:column; }
+}
+@media (max-width:380px) {
+ .brand { font-size:13px; }
+ .nav-cta { font-size:10px; padding:9px 9px; }
+ .hero-mini-grid { grid-template-columns:1fr; }
+ .hero-mini { padding:11px; }
+ .art-top { flex-direction:column; }
+ .art-heading { font-size:27px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; } }
 </style>
@@ -177,7 +219,8 @@ h2 { font-size:clamp(32px, 4vw, 48px); letter-spacing:-.065em; line-height:1.08;
 <div class="site" id="top">
   <header class="wrap nav">
     <a class="brand" href="#top" aria-label="Márcio Borges — início"><span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none"><path d="M6 29V11h5l9 11 9-11h5v18h-6V20l-8 9-8-9v9H6Z" fill="currentColor"/><circle cx="32" cy="8" r="3" fill="#bfcaff"/><path d="M27 8h-5" stroke="#bfcaff" stroke-width="2.5" stroke-linecap="round"/></svg></span><span>Márcio Borges</span></a>
-    <nav class="nav-links" aria-label="Navegação principal">
+    <button class="mobile-menu" id="mobileMenuButton" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primaryNav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav-links" id="primaryNav" aria-label="Navegação principal">
       <a href="#servicos">Serviços</a><a href="#metodo">Como trabalho</a><a href="#servicos">Sites</a><a href="#lojas">Lojas</a><a href="#apps">Apps</a><a href="#contacto">Contactos</a>
     </nav>
     <a class="nav-cta" href="#contacto">Pedir proposta <span aria-hidden="true">↗</span></a>
@@ -273,6 +316,24 @@ h2 { font-size:clamp(32px, 4vw, 48px); letter-spacing:-.065em; line-height:1.08;
 </div>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+const menuButton = document.getElementById('mobileMenuButton');
+const primaryNav = document.getElementById('primaryNav');
+if (menuButton && primaryNav) {
+  menuButton.addEventListener('click', () => {
+    const isOpen = primaryNav.classList.toggle('is-open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    menuButton.innerHTML = isOpen
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  });
+  primaryNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    primaryNav.classList.remove('is-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Abrir menu');
+    menuButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  }));
+}
 const phrase = document.getElementById('rotatingPhrase');
 const phrases = ['que se notam.', 'para crescer.', 'que simplificam.', 'com propósito.'];
 let phraseIndex = 0;
