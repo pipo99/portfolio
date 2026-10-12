@@ -3,316 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Márcio Borges — consultoria informática, criação de websites e estratégia digital para negócios que querem crescer com clareza.">
-<title>Márcio Borges — Consultoria Digital</title>
+<meta name="description" content="Márcio Borges — experiência em tecnologia, presença digital e estratégia de negócio.">
+<title>Márcio Borges — Tecnologia e Presença Digital</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234263eb'/%3E%3Cpath d='M9 46V18h8l15 17 15-17h8v28H44V31L32 45 20 31v15H9Z' fill='white'/%3E%3Ccircle cx='51' cy='12' r='5' fill='%23bfcaff'/%3E%3Cpath d='M43 12h-5' stroke='%23bfcaff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-:root {
-  color-scheme: light dark;
-  --bg: light-dark(#f7f5f0, #121722);
-  --surface: light-dark(#ffffff, #1b2230);
-  --surface-2: light-dark(#ece9e2, #232c3c);
-  --text: light-dark(#171d2a, #f4f5f8);
-  --muted: light-dark(#646b78, #aab3c4);
-  --line: light-dark(#dedbd4, #333d50);
-  --accent: light-dark(#4263eb, #8297ff);
-  --accent-text: #ffffff;
-  --dark-panel: #171e2d;
-  --radius: 22px;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; }
-a { color: inherit; text-decoration: none; }
-button, a { -webkit-tap-highlight-color: transparent; }
-button:focus-visible, a:focus-visible { outline: 3px solid #84ad36; outline-offset: 4px; }
-.site { min-height: 100vh; background: var(--bg); }
-.wrap { width: min(1160px, calc(100% - 44px)); margin-inline: auto; }
-.nav { display:flex; justify-content:space-between; align-items:center; padding:16px 0; gap:24px; position:sticky; top:0; z-index:1000; background:var(--bg); border-bottom:1px solid var(--line); }
-.brand { display:flex; align-items:center; gap:11px; font-weight:750; letter-spacing:-.04em; font-size:18px; }
-.brand-mark { width:38px; height:38px; display:grid; place-items:center; background:var(--accent); color:var(--accent-text); border-radius:12px; flex:0 0 38px; }
-.brand-mark svg { width:27px; height:27px; display:block; }
-.nav-links { display:flex; align-items:center; gap:28px; color:var(--muted); font-size:13px; font-weight:600; }
-.nav-links a:hover { color:var(--text); }
-.nav-cta, .button { display:inline-flex; justify-content:center; align-items:center; gap:10px; padding:12px 17px; border-radius:999px; font-size:13px; font-weight:750; transition:transform .2s ease, background .2s ease; }
-.nav-cta, .button.primary { background:var(--accent); color:var(--accent-text); }
-.nav-cta:hover, .button:hover { transform:translateY(-2px); }
-.hero { display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:64px; padding:72px 0 82px; }
-.eyebrow { display:flex; align-items:center; gap:10px; color:var(--muted); text-transform:uppercase; font-size:11px; letter-spacing:.16em; font-weight:800; }
-.dot { width:8px; height:8px; background:#4263eb; border-radius:50%; box-shadow:0 0 0 5px light-dark(#e2e8ff, #28324f); }
-h1 { font-size:clamp(44px, 5.8vw, 76px); letter-spacing:-.075em; line-height:.99; margin:22px 0 25px; max-width:700px; font-weight:780; }
-h1 span { color:light-dark(#4263eb, #9eafff); }
-.rotating-phrase { display:inline-block; min-width:9ch; color:light-dark(#4263eb, #9eafff); transition:opacity .22s ease, transform .22s ease; }
-.rotating-phrase.out { opacity:0; transform:translateY(8px); }
-.hero-copy { color:var(--muted); font-size:17px; max-width:570px; line-height:1.75; }
-.hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:31px; }
-.button.secondary { border:1px solid var(--line); background:var(--surface); }
-.micro-proof { display:flex; gap:18px; align-items:center; margin-top:32px; color:var(--muted); font-size:12px; }
-.micro-proof strong { color:var(--text); font-size:14px; }
-.hero-art { min-height:440px; position:relative; border-radius:30px; background:var(--dark-panel); overflow:hidden; padding:26px; color:#f2f5ff; isolation:isolate; }
-.hero-art:before { content:""; position:absolute; width:330px; height:330px; border-radius:50%; background:radial-gradient(circle, rgba(92,120,255,.34), rgba(92,120,255,0) 70%); right:-80px; top:-80px; z-index:-1; animation:glow-drift 8s ease-in-out infinite alternate; }
-@keyframes glow-drift { from { transform:translate(-12px, 8px) scale(.92); } to { transform:translate(15px, -12px) scale(1.08); } }
-.art-top { display:flex; justify-content:space-between; align-items:center; font-size:11px; color:#b8c4b8; letter-spacing:.12em; text-transform:uppercase; }
-.art-status { border:1px solid #414d70; padding:6px 9px; border-radius:999px; color:#aab8ff; letter-spacing:0; text-transform:none; }
-.art-heading { margin-top:53px; font-size:32px; line-height:1.1; letter-spacing:-.06em; max-width:310px; }
-.art-heading span { color:#aab8ff; }
-.art-lines { display:grid; gap:10px; margin-top:27px; }
-.art-line { height:9px; border-radius:9px; background:#344136; }
-.art-line:nth-child(1) { width:90%; }
-.art-line:nth-child(2) { width:73%; }
-.art-line:nth-child(3) { width:82%; }
-.art-cards { position:absolute; bottom:25px; left:25px; right:25px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.art-card { padding:16px; border:1px solid #3b493c; border-radius:16px; background:rgba(255,255,255,.035); }
-.art-card small { display:block; color:#aab7a9; font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
-.art-card strong { display:block; margin-top:8px; font-size:15px; }
-.art-icon { color:#aab8ff; font-size:20px; margin-bottom:8px; }
-.hero-mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:25px; }
-.hero-mini { display:flex; align-items:center; gap:12px; border:1px solid #39445c; border-radius:15px; background:rgba(255,255,255,.045); padding:14px; animation:float-in .7s both; }
-.hero-mini:nth-child(2) { animation-delay:.12s; }
-.hero-mini:nth-child(3) { animation-delay:.24s; }
-.hero-mini:nth-child(4) { animation-delay:.36s; }
-.hero-mini .mini-icon { width:34px; height:34px; flex:0 0 34px; display:grid; place-items:center; border-radius:10px; background:#293452; color:#b7c2ff; font-size:17px; }
-.hero-mini strong { display:block; font-size:12px; line-height:1.3; }
-.hero-mini small { display:block; color:#aab4c8; font-size:10px; margin-top:4px; }
-@keyframes float-in { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-.section { padding:86px 0; }
-.section-head { display:flex; align-items:end; justify-content:space-between; gap:32px; margin-bottom:35px; }
-.kicker { color:var(--muted); text-transform:uppercase; letter-spacing:.16em; font-size:11px; font-weight:800; }
-h2 { font-size:clamp(32px, 4vw, 48px); letter-spacing:-.065em; line-height:1.08; margin:12px 0 0; max-width:650px; }
-.section-intro { max-width:390px; color:var(--muted); font-size:14px; }
-.services { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.service { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:25px; min-height:245px; display:flex; flex-direction:column; }
-.service-number { font-size:11px; color:var(--muted); letter-spacing:.12em; }
-.service-icon { width:45px; height:45px; display:grid; place-items:center; margin:24px 0 20px; border-radius:14px; background:var(--surface-2); font-size:21px; }
-.service h3 { font-size:20px; letter-spacing:-.04em; margin:0 0 9px; }
-.service p { color:var(--muted); font-size:13px; line-height:1.75; margin:0; }
-.service-link { margin-top:auto; padding-top:18px; color:light-dark(#4263eb, #9eafff); font-size:12px; font-weight:750; }
-.maintenance { background:var(--surface-2); border-block:1px solid var(--line); }
-.plans { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-items:stretch; }
-.plan { background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:25px; display:flex; flex-direction:column; min-height:390px; }
-.plan.popular { border:2px solid var(--accent); transform:translateY(-7px); box-shadow:0 18px 40px rgba(30,50,100,.10); }
-.plan-label { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.13em; font-weight:800; }
-.plan h3 { margin:12px 0 4px; font-size:23px; letter-spacing:-.05em; }
-.plan-price { font-size:30px; font-weight:800; letter-spacing:-.06em; margin:10px 0 2px; }
-.plan-price small { font-size:12px; font-weight:600; color:var(--muted); letter-spacing:0; }
-.plan-note { color:var(--muted); font-size:12px; min-height:38px; }
-.plan ul { padding-left:18px; margin:17px 0 24px; color:var(--muted); font-size:12px; line-height:1.9; }
-.plan .button { margin-top:auto; }
-.plan-disclaimer { margin:24px 0 0; color:var(--muted); font-size:11px; }
-.process { background:var(--surface-2); border-block:1px solid var(--line); }
-.process-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:start; }
-.process-copy p { color:var(--muted); font-size:15px; max-width:390px; line-height:1.8; }
-.steps { border-top:1px solid var(--line); }
-.step { display:grid; grid-template-columns:55px 1fr; gap:18px; padding:23px 0; border-bottom:1px solid var(--line); }
-.step-num { font-size:12px; color:var(--muted); padding-top:4px; }
-.step h3 { margin:0 0 5px; font-size:17px; letter-spacing:-.03em; }
-.step p { margin:0; color:var(--muted); font-size:13px; max-width:480px; }
-.focus-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.focus-card { border-radius:var(--radius); background:var(--surface); border:1px solid var(--line); padding:28px; }
-.focus-card.featured { background:var(--dark-panel); color:#f2f6ee; border-color:var(--dark-panel); }
-.focus-card h3 { font-size:23px; letter-spacing:-.05em; margin:18px 0 10px; }
-.focus-card p { color:var(--muted); font-size:14px; line-height:1.8; }
-.focus-card.featured p { color:#bdc8bd; }
-.pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
-.pill { padding:7px 10px; border:1px solid var(--line); border-radius:999px; font-size:11px; color:var(--muted); }
-.featured .pill { color:#d4dfd3; border-color:#435043; }
-.about { display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; align-items:center; }
-.about-mark { min-height:310px; background:var(--accent); color:var(--accent-text); border-radius:28px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; }
-.about-mark .brand-symbol-large { width:min(48%, 190px); aspect-ratio:1; display:grid; place-items:center; align-self:center; }
-.about-mark .brand-symbol-large svg { width:100%; height:100%; display:block; }
-.about-mark small { font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:800; }
-.about-copy p { color:var(--muted); font-size:15px; line-height:1.85; }
-.about-stats { display:flex; gap:30px; flex-wrap:wrap; margin-top:25px; }
-.about-stats strong { display:block; font-size:24px; letter-spacing:-.05em; }
-.about-stats span { display:block; font-size:11px; color:var(--muted); margin-top:2px; }
-.contact { padding:0 0 80px; }
-.contact-panel { background:var(--dark-panel); color:#f2f6ee; border-radius:28px; padding:clamp(28px, 6vw, 65px); display:grid; grid-template-columns:1fr auto; align-items:center; gap:30px; }
-.contact-panel .kicker { color:#aab8ff; }
-.contact-panel h2 { max-width:640px; }
-.contact-panel p { color:#bdc8bd; max-width:520px; font-size:14px; }
-.contact-email { display:inline-flex; align-items:center; gap:11px; margin-top:12px; color:#c4ceff; font-size:clamp(19px, 2.2vw, 25px); font-weight:800; overflow-wrap:anywhere; }
-.contact-email:hover { color:#ffffff; text-decoration:underline; text-underline-offset:4px; }
-.contact-actions { display:flex; flex-direction:column; gap:10px; min-width:180px; }
-.contact-actions .button.secondary { background:transparent; color:#f2f6ee; border-color:#465447; }
-.footer { border-top:1px solid var(--line); padding:24px 0 32px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:11px; }
-.mobile-menu { display:none; border:1px solid var(--line); background:var(--surface); color:var(--text); width:42px; height:42px; border-radius:12px; align-items:center; justify-content:center; cursor:pointer; flex:0 0 42px; }
-.mobile-menu svg { width:22px; height:22px; }
-.nav-links a { padding:8px 0; }
-@media (max-width:1000px) {
- .nav { gap:14px; }
- .nav-links { gap:15px; font-size:12px; }
- .brand { flex-shrink:0; }
-}
-@media (max-width:850px) {
- .nav { position:sticky; }
- .mobile-menu { display:inline-flex; margin-left:auto; }
- .nav-links { display:none; position:absolute; top:calc(100% + 1px); left:0; right:0; padding:12px 16px 16px; background:var(--bg); border:1px solid var(--line); border-top:0; border-radius:0 0 18px 18px; box-shadow:0 14px 25px rgba(20,30,50,.08); align-items:stretch; flex-direction:column; gap:2px; font-size:14px; }
- .nav-links.is-open { display:flex; }
- .nav-links a { padding:11px 8px; border-radius:9px; }
- .nav-links a:hover { background:var(--surface-2); }
- .nav-cta { padding:11px 14px; white-space:nowrap; }
- .hero { grid-template-columns:1fr; gap:35px; padding:55px 0 65px; }
- .hero-art { min-height:390px; }
- .services { grid-template-columns:repeat(2,1fr); }
- .plans { grid-template-columns:1fr; }
- .plan.popular { transform:none; }
- .process-grid, .about { grid-template-columns:1fr; gap:35px; }
- .about-mark { min-height:240px; }
- .about-mark .brand-symbol-large { width:145px; }
- .contact-panel { grid-template-columns:1fr; }
- .contact-actions { flex-direction:row; flex-wrap:wrap; }
-}
-@media (max-width:600px) {
- .wrap { width:min(100% - 30px, 1160px); }
- .nav { padding:12px 0; gap:10px; }
- .brand { gap:7px; font-size:14px; min-width:0; }
- .brand-mark { width:32px; height:32px; flex-basis:32px; border-radius:10px; }
- .brand-mark svg { width:23px; height:23px; }
- .mobile-menu { width:38px; height:38px; flex-basis:38px; }
- .nav-cta { padding:10px 11px; font-size:11px; }
- h1 { font-size:clamp(39px, 11vw, 48px); overflow-wrap:anywhere; }
- .rotating-phrase { min-width:0; }
- .hero-copy { font-size:15px; }
- .hero-art { min-height:0; padding:18px; border-radius:22px; }
- .art-top { align-items:flex-start; gap:8px; font-size:9px; }
- .art-status { padding:5px 7px; white-space:nowrap; font-size:9px; }
- .art-heading { margin-top:35px; font-size:29px; }
- .hero-mini-grid { gap:8px; margin-top:22px; }
- .hero-mini { padding:10px 8px; gap:8px; min-width:0; }
- .hero-mini .mini-icon { width:29px; height:29px; flex-basis:29px; font-size:15px; }
- .hero-mini strong { font-size:11px; overflow-wrap:anywhere; }
- .hero-mini small { font-size:9px; line-height:1.35; }
- .hero-actions { align-items:stretch; flex-direction:column; }
- .hero-actions .button { width:100%; }
- .micro-proof { align-items:flex-start; gap:10px; }
- .art-cards { left:20px; right:20px; bottom:20px; }
- .section { padding:62px 0; }
- .section-head { display:block; }
- .section-intro { margin-top:18px; }
- .services, .focus-grid { grid-template-columns:1fr; }
- .hero-mini-grid { grid-template-columns:1fr 1fr; }
- .service { min-height:220px; }
- .service, .plan, .focus-card { padding:21px; }
- .plan { min-height:0; }
- .plan .button { width:100%; }
- .about-stats { gap:20px; }
- .contact-panel { padding:25px 20px; border-radius:22px; }
- .contact-email { font-size:clamp(17px, 5vw, 22px); }
- .contact-actions { flex-direction:column; }
- .contact-actions .button { width:100%; }
- .step { grid-template-columns:35px 1fr; gap:12px; }
- .contact { padding-bottom:50px; }
- .footer { flex-direction:column; }
-}
-@media (max-width:380px) {
- .brand { font-size:13px; }
- .nav-cta { font-size:10px; padding:9px 9px; }
- .hero-mini-grid { grid-template-columns:1fr; }
- .hero-mini { padding:11px; }
- .art-top { flex-direction:column; }
- .art-heading { font-size:27px; }
-}
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; } }
+:root{color-scheme:light dark;--bg:light-dark(#f7f5f0,#121722);--surface:light-dark(#fff,#1b2230);--surface-2:light-dark(#ece9e2,#232c3c);--text:light-dark(#171d2a,#f4f5f8);--muted:light-dark(#646b78,#aab3c4);--line:light-dark(#dedbd4,#333d50);--accent:light-dark(#4263eb,#8297ff);--accent-text:#fff;--dark-panel:#171e2d;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid #84ad36;outline-offset:4px}.site{min-height:100vh;background:var(--bg)}.wrap{width:min(1160px,calc(100% - 44px));margin-inline:auto}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:24px;position:sticky;top:0;z-index:1000;background:var(--bg);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:-.04em;font-size:18px}.brand-mark{width:38px;height:38px;display:grid;place-items:center;background:var(--accent);color:var(--accent-text);border-radius:12px;flex:0 0 38px}.brand-mark svg{width:27px;height:27px;display:block}.nav-links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:13px;font-weight:600}.nav-links a:hover{color:var(--text)}.nav-cta,.button{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:12px 17px;border-radius:999px;font-size:13px;font-weight:750;transition:transform .2s ease,background .2s ease}.nav-cta,.button.primary{background:var(--accent);color:var(--accent-text)}.nav-cta:hover,.button:hover{transform:translateY(-2px)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:64px;padding:72px 0 82px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--muted);text-transform:uppercase;font-size:11px;letter-spacing:.16em;font-weight:800}.dot{width:8px;height:8px;background:#4263eb;border-radius:50%;box-shadow:0 0 0 5px light-dark(#e2e8ff,#28324f)}h1{font-size:clamp(44px,5.8vw,76px);letter-spacing:-.075em;line-height:.99;margin:22px 0 25px;max-width:700px;font-weight:780}h1 span{color:light-dark(#4263eb,#9eafff)}.rotating-phrase{display:inline-block;min-width:9ch;color:light-dark(#4263eb,#9eafff);transition:opacity .22s ease,transform .22s ease}.rotating-phrase.out{opacity:0;transform:translateY(8px)}.hero-copy{color:var(--muted);font-size:17px;max-width:570px;line-height:1.75}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}.button.secondary{border:1px solid var(--line);background:var(--surface)}.micro-proof{display:flex;gap:18px;align-items:center;margin-top:32px;color:var(--muted);font-size:12px}.micro-proof strong{color:var(--text);font-size:14px}
+.hero-art{min-height:440px;position:relative;border-radius:30px;background:var(--dark-panel);overflow:hidden;padding:26px;color:#f2f5ff;isolation:isolate}.hero-art:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(92,120,255,.34),rgba(92,120,255,0) 70%);right:-80px;top:-80px;z-index:-1;animation:glow-drift 8s ease-in-out infinite alternate}@keyframes glow-drift{from{transform:translate(-12px,8px) scale(.92)}to{transform:translate(15px,-12px) scale(1.08)}}.art-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#b8c4b8;letter-spacing:.12em;text-transform:uppercase}.art-status{border:1px solid #414d70;padding:6px 9px;border-radius:999px;color:#aab8ff;letter-spacing:0;text-transform:none}.art-heading{margin-top:53px;font-size:32px;line-height:1.1;letter-spacing:-.06em;max-width:310px}.art-heading span{color:#aab8ff}.hero-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}.hero-mini{display:flex;align-items:center;gap:12px;border:1px solid #39445c;border-radius:15px;background:rgba(255,255,255,.045);padding:14px;animation:float-in .7s both}.hero-mini:nth-child(2){animation-delay:.12s}.hero-mini:nth-child(3){animation-delay:.24s}.hero-mini:nth-child(4){animation-delay:.36s}.hero-mini .mini-icon{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border-radius:10px;background:#293452;color:#b7c2ff;font-size:17px}.hero-mini strong{display:block;font-size:12px;line-height:1.3}.hero-mini small{display:block;color:#aab4c8;font-size:10px;margin-top:4px}@keyframes float-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.section{padding:86px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:35px}.kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800}h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.065em;line-height:1.08;margin:12px 0 0;max-width:650px}.section-intro{max-width:390px;color:var(--muted);font-size:14px}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:25px;min-height:245px;display:flex;flex-direction:column}.service-number{font-size:11px;color:var(--muted);letter-spacing:.12em}.service-icon{width:45px;height:45px;display:grid;place-items:center;margin:24px 0 20px;border-radius:14px;background:var(--surface-2);font-size:21px}.service h3{font-size:20px;letter-spacing:-.04em;margin:0 0 9px}.service p{color:var(--muted);font-size:13px;line-height:1.75;margin:0}.service-link{margin-top:auto;padding-top:18px;color:light-dark(#4263eb,#9eafff);font-size:12px;font-weight:750}.process{background:var(--surface-2);border-block:1px solid var(--line)}.process-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.process-copy p{color:var(--muted);font-size:15px;max-width:390px;line-height:1.8}.steps{border-top:1px solid var(--line)}.step{display:grid;grid-template-columns:55px 1fr;gap:18px;padding:23px 0;border-bottom:1px solid var(--line)}.step-num{font-size:12px;color:var(--muted);padding-top:4px}.step h3{margin:0 0 5px;font-size:17px;letter-spacing:-.03em}.step p{margin:0;color:var(--muted);font-size:13px;max-width:480px}.focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.focus-card{border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);padding:28px}.focus-card.featured{background:var(--dark-panel);color:#f2f6ee;border-color:var(--dark-panel)}.focus-card h3{font-size:23px;letter-spacing:-.05em;margin:18px 0 10px}.focus-card p{color:var(--muted);font-size:14px;line-height:1.8}.focus-card.featured p{color:#bdc8bd}.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;font-size:11px;color:var(--muted)}.featured .pill{color:#d4dfd3;border-color:#435043}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}.about-mark{min-height:310px;background:var(--accent);color:var(--accent-text);border-radius:28px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}.about-mark .brand-symbol-large{width:min(48%,190px);aspect-ratio:1;display:grid;place-items:center;align-self:center}.about-mark .brand-symbol-large svg{width:100%;height:100%;display:block}.about-mark small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}.about-copy p{color:var(--muted);font-size:15px;line-height:1.85}.about-stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:25px}.about-stats strong{display:block;font-size:24px;letter-spacing:-.05em}.about-stats span{display:block;font-size:11px;color:var(--muted);margin-top:2px}.contact{padding:0 0 80px}.contact-panel{background:var(--dark-panel);color:#f2f6ee;border-radius:28px;padding:clamp(28px,6vw,65px);display:grid;grid-template-columns:1fr;align-items:center;gap:30px}.contact-panel .kicker{color:#aab8ff}.contact-panel h2{max-width:640px}.contact-panel p{color:#bdc8bd;max-width:650px;font-size:14px}.contact-email{display:inline-flex;align-items:center;gap:11px;margin-top:12px;color:#c4ceff;font-size:clamp(19px,2.2vw,25px);font-weight:800;overflow-wrap:anywhere}.contact-email:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}.footer-links{display:flex;flex-wrap:wrap;gap:16px}.footer-links a:hover{color:var(--text);text-decoration:underline;text-underline-offset:3px}.footer{border-top:1px solid var(--line);padding:24px 0 32px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px}.mobile-menu{display:none;border:1px solid var(--line);background:var(--surface);color:var(--text);width:42px;height:42px;border-radius:12px;align-items:center;justify-content:center;cursor:pointer;flex:0 0 42px}.mobile-menu svg{width:22px;height:22px}.nav-links a{padding:8px 0}
+@media(max-width:1000px){.nav{gap:14px}.nav-links{gap:15px;font-size:12px}.brand{flex-shrink:0}}@media(max-width:850px){.nav{position:sticky}.mobile-menu{display:inline-flex;margin-left:auto}.nav-links{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;padding:12px 16px 16px;background:var(--bg);border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;box-shadow:0 14px 25px rgba(20,30,50,.08);align-items:stretch;flex-direction:column;gap:2px;font-size:14px}.nav-links.is-open{display:flex}.nav-links a{padding:11px 8px;border-radius:9px}.nav-links a:hover{background:var(--surface-2)}.nav-cta{padding:11px 14px;white-space:nowrap}.hero{grid-template-columns:1fr;gap:35px;padding:55px 0 65px}.hero-art{min-height:390px}.services{grid-template-columns:repeat(2,1fr)}.process-grid,.about{grid-template-columns:1fr;gap:35px}.about-mark{min-height:240px}.about-mark .brand-symbol-large{width:145px}.contact-panel{grid-template-columns:1fr}}@media(max-width:600px){.wrap{width:min(100% - 30px,1160px)}.nav{padding:12px 0;gap:10px}.brand{gap:7px;font-size:14px;min-width:0}.brand-mark{width:32px;height:32px;flex-basis:32px;border-radius:10px}.brand-mark svg{width:23px;height:23px}.mobile-menu{width:38px;height:38px;flex-basis:38px}.nav-cta{padding:10px 11px;font-size:11px}h1{font-size:clamp(39px,11vw,48px);overflow-wrap:anywhere}.rotating-phrase{min-width:0}.hero-copy{font-size:15px}.hero-art{min-height:0;padding:18px;border-radius:22px}.art-top{align-items:flex-start;gap:8px;font-size:9px}.art-status{padding:5px 7px;white-space:nowrap;font-size:9px}.art-heading{margin-top:35px;font-size:29px}.hero-mini-grid{gap:8px;margin-top:22px}.hero-mini{padding:10px 8px;gap:8px;min-width:0}.hero-mini .mini-icon{width:29px;height:29px;flex-basis:29px;font-size:15px}.hero-mini strong{font-size:11px;overflow-wrap:anywhere}.hero-mini small{font-size:9px;line-height:1.35}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.micro-proof{align-items:flex-start;gap:10px}.section{padding:62px 0}.section-head{display:block}.section-intro{margin-top:18px}.services,.focus-grid{grid-template-columns:1fr}.hero-mini-grid{grid-template-columns:1fr 1fr}.service{min-height:220px}.service,.focus-card{padding:21px}.about-stats{gap:20px}.contact-panel{padding:25px 20px;border-radius:22px}.contact-email{font-size:clamp(17px,5vw,22px)}.step{grid-template-columns:35px 1fr;gap:12px}.contact{padding-bottom:50px}.footer{flex-direction:column}}@media(max-width:380px){.brand{font-size:13px}.nav-cta{font-size:10px;padding:9px 9px}.hero-mini-grid{grid-template-columns:1fr}.hero-mini{padding:11px}.art-top{flex-direction:column}.art-heading{font-size:27px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 </style>
 </head>
 <body>
 <div class="site" id="top">
-  <header class="wrap nav">
-    <a class="brand" href="#top" aria-label="Márcio Borges — início"><span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none"><path d="M6 29V11h5l9 11 9-11h5v18h-6V20l-8 9-8-9v9H6Z" fill="currentColor"/><circle cx="32" cy="8" r="3" fill="#bfcaff"/><path d="M27 8h-5" stroke="#bfcaff" stroke-width="2.5" stroke-linecap="round"/></svg></span><span>Márcio Borges</span></a>
-    <button class="mobile-menu" id="mobileMenuButton" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primaryNav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <nav class="nav-links" id="primaryNav" aria-label="Navegação principal">
-      <a href="#servicos">Serviços</a><a href="#metodo">Como trabalho</a><a href="#servicos">Sites</a><a href="#lojas">Lojas</a><a href="#apps">Apps</a><a href="#contacto">Contactos</a>
-    </nav>
-    <a class="nav-cta" href="#contacto">Pedir proposta <span aria-hidden="true">↗</span></a>
-  </header>
-  <main>
-    <section class="wrap hero">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> Consultoria informática · Presença digital</div>
-        <h1>Ideias digitais.<br>Resultados <span class="rotating-phrase" id="rotatingPhrase">que se notam.</span></h1>
-        <p class="hero-copy">Websites que valorizam o seu negócio e soluções digitais práticas para transformar desafios em oportunidades — da presença online às ferramentas que fazem a empresa avançar.</p>
-        <div class="hero-actions"><a class="button primary" href="#contacto">Falar sobre o seu projeto <span aria-hidden="true">↗</span></a><a class="button secondary" href="#servicos">Explorar serviços <span aria-hidden="true">↓</span></a></div>
-        <div class="micro-proof"><strong>20+ anos</strong><span>de experiência em tecnologia, negócio e transformação digital</span></div>
-      </div>
-      <div class="hero-art" aria-label="Áreas de trabalho digital">
-        <div class="art-top"><span>Ideia · Estratégia · Execução</span><span class="art-status">● Feito à medida</span></div>
-        <div class="art-heading">Tecnologia que<br><span>resolve problemas.</span></div>
-        <div class="hero-mini-grid">
-          <div class="hero-mini"><span class="mini-icon">↗</span><div><strong>Websites</strong><small>Presença que converte</small></div></div>
-          <div class="hero-mini"><span class="mini-icon">▣</span><div><strong>Apps móveis</strong><small>Serviços na mão</small></div></div>
-          <div class="hero-mini"><span class="mini-icon">⌘</span><div><strong>Apps de negócio</strong><small>Processos mais simples</small></div></div>
-          <div class="hero-mini"><span class="mini-icon">◷</span><div><strong>Gestão e automação</strong><small>Mais controlo, menos tarefas</small></div></div>
-          <div class="hero-mini"><span class="mini-icon">✳</span><div><strong>Consultoria informática</strong><small>Decisões tecnológicas claras</small></div></div>
-          <div class="hero-mini"><span class="mini-icon">⌑</span><div><strong>Cibersegurança</strong><small>Mais proteção e prevenção</small></div></div>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="servicos">
-      <div class="wrap">
-        <div class="section-head"><div><div class="kicker">Soluções para o seu negócio</div><h2>Uma visão prática do seu próximo passo digital.</h2></div><p class="section-intro">Da primeira ideia à presença online — estratégia, design e conhecimento técnico reunidos para encontrar soluções adequadas ao negócio.</p></div>
-        <div class="services">
-          <article class="service"><span class="service-number">01 / PRESENÇA</span><div class="service-icon">◫</div><h3>Websites profissionais</h3><p>Sites rápidos, responsivos e claros, pensados para transmitir confiança, apresentar serviços e gerar contactos.</p><a class="service-link" href="#contacto">Falar sobre um website ↗</a></article>
-          <article class="service"><span class="service-number">02 / COMÉRCIO</span><div class="service-icon">▤</div><h3>Lojas online</h3><p>Lojas online fáceis de usar, com uma experiência de compra clara e ferramentas para gerir produtos, encomendas e clientes.</p><a class="service-link" href="#lojas">Conhecer as lojas online ↗</a></article>
-          <article class="service"><span class="service-number">03 / MOBILIDADE</span><div class="service-icon">▯</div><h3>Aplicações móveis</h3><p>Apps para aproximar clientes, equipas e serviços, com experiências móveis úteis, intuitivas e adaptadas a cada projeto.</p><a class="service-link" href="#apps">Conhecer as apps móveis ↗</a></article>
-          <article class="service"><span class="service-number">04 / GESTÃO</span><div class="service-icon">▦</div><h3>Aplicações de negócio e gestão</h3><p>Ferramentas ajustadas aos processos da empresa para organizar informação, acompanhar operações e apoiar decisões.</p><a class="service-link" href="#contacto">Falar de uma solução ↗</a></article>
-          <article class="service"><span class="service-number">05 / ORIENTAÇÃO</span><div class="service-icon">⌁</div><h3>Consultoria informática</h3><p>Apoio na escolha de ferramentas, serviços e soluções tecnológicas, com recomendações claras e ajustadas às necessidades do negócio.</p><a class="service-link" href="#contacto">Analisar necessidades ↗</a></article>
-          <article class="service"><span class="service-number">06 / PROTEÇÃO</span><div class="service-icon">⬡</div><h3>Cibersegurança</h3><p>Orientação para boas práticas, proteção de acessos, cópias de segurança e redução dos riscos digitais mais comuns.</p><a class="service-link" href="#contacto">Rever a segurança digital ↗</a></article>
-          <article class="service"><span class="service-number">07 / EFICIÊNCIA</span><div class="service-icon">⤴</div><h3>Processos e integrações</h3><p>Ligação entre ferramentas e simplificação de tarefas repetitivas para reduzir trabalho manual e melhorar os fluxos de informação.</p><a class="service-link" href="#contacto">Simplificar processos ↗</a></article>
-          <article class="service"><span class="service-number">08 / CRESCIMENTO</span><div class="service-icon">◎</div><h3>Estratégia digital e SEO</h3><p>Uma presença online coerente, com conteúdo relevante e melhorias para ajudar o negócio a ser encontrado pelas pessoas certas.</p><a class="service-link" href="#contacto">Melhorar a visibilidade ↗</a></article>
-          <article class="service"><span class="service-number">09 / INFRAESTRUTURA</span><div class="service-icon">⌁</div><h3>Alojamento e email profissional</h3><p>Uma base digital fiável para o negócio, com alojamento de websites, domínio e email profissional alinhados com as necessidades da empresa.</p><a class="service-link" href="#contacto">Preparar a infraestrutura ↗</a></article>
-        </div>
-      </div>
-    </section>
-    <section class="section maintenance" id="manutencao">
-      <div class="wrap">
-        <div class="section-head"><div><div class="kicker">O site não acaba no lançamento</div><h2>O seu website, acompanhado todos os meses.</h2></div><p class="section-intro">Atualizações, melhorias, apoio e acompanhamento técnico para manter o site seguro, atual e alinhado com a evolução do negócio.</p></div>
-        <div class="plans">
-          <article class="plan"><span class="plan-label">Simples e económico</span><h3>Manutenção Base</h3><p class="plan-note">Para um website institucional ou landing page que precisa de estar online e atualizado.</p><ul><li>Alojamento incluído ou no alojamento do cliente</li><li>Acessos de administração para o cliente</li><li>Atualizações técnicas regulares</li><li>Verificação básica de funcionamento</li><li>Apoio para pequenas questões</li></ul><a class="button secondary" href="#contacto">Pedir proposta ↗</a></article>
-          <article class="plan popular"><span class="plan-label">Para manter tudo cuidado</span><h3>Manutenção Plus</h3><p class="plan-note">Para empresas que precisam de pequenas alterações e acompanhamento regular.</p><ul><li>Tudo do plano Base</li><li>Atualização de textos, imagens e conteúdos</li><li>Pequenas melhorias ao website</li><li>Cópias de segurança e monitorização, conforme a infraestrutura</li><li>Apoio prioritário</li></ul><a class="button primary" href="#contacto">Pedir proposta ↗</a></article>
-          <article class="plan"><span class="plan-label">Para evoluir continuamente</span><h3>Manutenção Pro</h3><p class="plan-note">Para negócios que querem melhorar o site e a sua presença digital ao longo do tempo.</p><ul><li>Tudo do plano Plus</li><li>Maior volume de alterações e melhorias</li><li>Revisão regular de desempenho e SEO técnico</li><li>Acompanhamento e planeamento de evolução</li><li>Consultoria digital contínua</li></ul><a class="button secondary" href="#contacto">Pedir proposta ↗</a></article>
-        </div>
-        <p class="plan-disclaimer">Todos os planos incluem alojamento gerido ou podem funcionar no alojamento escolhido pelo cliente. O cliente mantém acessos ao website. O âmbito das atualizações, o volume de alterações, o suporte e eventuais custos de domínio, licenças ou serviços externos são definidos na proposta, de acordo com as necessidades do projeto.</p>
-      </div>
-    </section>
-    <section class="section process" id="metodo">
-      <div class="wrap process-grid">
-        <div class="process-copy"><div class="kicker">Um método sem complicações</div><h2>Da necessidade à solução certa.</h2><p>Cada projeto começa por compreender os objetivos, o orçamento e as pessoas que vão utilizar a solução. A partir daí, definem-se prioridades e um caminho prático, sem complexidade desnecessária.</p><a class="button secondary" href="#contacto">Conversar sem compromisso ↗</a></div>
-        <div class="steps">
-          <div class="step"><span class="step-num">01</span><div><h3>Descobrir</h3><p>Falamos sobre o negócio, os desafios e o que pretende alcançar.</p></div></div>
-          <div class="step"><span class="step-num">02</span><div><h3>Definir prioridades</h3><p>Organizo as possibilidades e proponho um caminho claro, sem complexidade desnecessária.</p></div></div>
-          <div class="step"><span class="step-num">03</span><div><h3>Construir e melhorar</h3><p>Passamos à prática, acompanhamos o resultado e ajustamos quando necessário.</p></div></div>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="lojas">
-      <div class="wrap">
-        <div class="section-head"><div><div class="kicker">Lojas online</div><h2>Transforme visitas em oportunidades de venda.</h2></div><p class="section-intro">Uma loja online deve tornar simples descobrir produtos, comprar e gerir encomendas. A solução é pensada de acordo com o catálogo, os clientes e a operação do negócio.</p></div>
-        <div class="focus-grid">
-          <article class="focus-card featured"><div class="kicker">Uma experiência de compra simples</div><h3>Uma loja preparada para os seus clientes.</h3><p>Apresentação clara dos produtos, navegação intuitiva e um processo de compra pensado para gerar confiança em cada etapa.</p><div class="pill-row"><span class="pill">Catálogo</span><span class="pill">Encomendas</span><span class="pill">Experiência móvel</span></div></article>
-          <article class="focus-card"><div class="kicker">Gestão sem complicações</div><h3>Ferramentas que acompanham a operação.</h3><p>Organização de produtos e conteúdos, integrações adequadas e uma base técnica que permita manter e fazer crescer a loja.</p><div class="pill-row"><span class="pill">Gestão de loja</span><span class="pill">Integrações</span><span class="pill">Acompanhamento</span></div></article>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="apps">
-      <div class="wrap">
-        <div class="section-head"><div><div class="kicker">Aplicações móveis</div><h2>Aplicações úteis, desenhadas à volta das pessoas.</h2></div><p class="section-intro">Experiências móveis para clientes, equipas e serviços — desde a ideia inicial à definição de funcionalidades e à evolução da aplicação.</p></div>
-        <div class="focus-grid">
-          <article class="focus-card featured"><div class="kicker">Apps para clientes</div><h3>Serviços mais próximos, onde quer que estejam.</h3><p>Aplicações móveis que facilitam o acesso a serviços, informação e funcionalidades importantes, com uma experiência simples e consistente.</p><div class="pill-row"><span class="pill">Experiência móvel</span><span class="pill">Notificações</span><span class="pill">Serviços digitais</span></div></article>
-          <article class="focus-card"><div class="kicker">Apps para empresas</div><h3>Ferramentas móveis para trabalhar melhor.</h3><p>Aplicações que apoiam equipas no terreno, recolha de informação e processos de negócio, ligadas aos sistemas existentes sempre que adequado.</p><div class="pill-row"><span class="pill">Processos</span><span class="pill">Integrações</span><span class="pill">Gestão</span></div></article>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="sobre">
-      <div class="wrap about">
-        <div class="about-mark"><small>Consultoria · Digital · Tecnologia</small><div class="brand-symbol-large" aria-hidden="true"><svg viewBox="0 0 160 160" fill="none"><rect x="8" y="8" width="144" height="144" rx="34" stroke="currentColor" stroke-opacity=".3" stroke-width="2"/><path d="M28 112V48h18l34 39 34-39h18v64h-22V81L80 112 50 81v31H28Z" fill="currentColor"/><circle cx="128" cy="29" r="9" fill="#bfcaff"/><path d="M113 29H99" stroke="#bfcaff" stroke-width="6" stroke-linecap="round"/></svg></div><small>Experiência que liga negócio e tecnologia.</small></div>
-        <div class="about-copy"><div class="kicker">Experiência e abordagem</div><h2>Experiência técnica. Visão de negócio.</h2><p>Com experiência em tecnologia desde 2004, o trabalho cruza conhecimento técnico, desenvolvimento de soluções digitais e melhoria de processos em diferentes setores.</p><p>Esta experiência permite analisar cada desafio de forma abrangente: compreender o problema, explicar as opções com clareza e identificar uma solução que faça sentido para quem a utiliza e para quem gere o negócio.</p><div class="about-stats"><div><strong>20+</strong><span>anos de experiência</span></div><div><strong>Negócio + IT</strong><span>duas perspetivas, uma solução</span></div><div><strong>Prático</strong><span>foco no que acrescenta valor</span></div></div></div>
-      </div>
-    </section>
-    <section class="wrap contact" id="contacto">
-      <div class="contact-panel"><div><div class="kicker">Tem um projeto em mente?</div><h2>Vamos transformar a ideia num próximo passo concreto.</h2><p>Conte-me o que pretende melhorar ou criar. Podemos começar por uma conversa simples para perceber as suas necessidades e as opções disponíveis.</p><a class="contact-email" href="mailto:marcioborges.it@gmail.com"><span aria-hidden="true">✉</span> marcioborges.it@gmail.com</a></div><div class="contact-actions"><a class="button primary" href="mailto:marcioborges.it@gmail.com?subject=Vamos%20falar%20sobre%20um%20projeto">Enviar email ↗</a></div></div>
-    </section>
-  </main>
-  <footer class="wrap footer"><span>© <span id="year">2026</span> Márcio Borges. Todos os direitos reservados.</span><span>Consultoria informática · Websites · Estratégia digital</span><a href="#top">Voltar ao topo ↑</a></footer>
+<header class="wrap nav">
+  <a class="brand" href="#top" aria-label="Márcio Borges — início"><span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none"><path d="M6 29V11h5l9 11 9-11h5v18h-6V20l-8 9-8-9v9H6Z" fill="currentColor"/><circle cx="32" cy="8" r="3" fill="#bfcaff"/><path d="M27 8h-5" stroke="#bfcaff" stroke-width="2.5" stroke-linecap="round"/></svg></span><span>Márcio Borges</span></a>
+  <button class="mobile-menu" id="mobileMenuButton" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primaryNav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <nav class="nav-links" id="primaryNav" aria-label="Navegação principal"><a href="#servicos">Áreas</a><a href="#metodo">Abordagem</a><a href="#servicos">Sites</a><a href="#lojas">Lojas</a><a href="#apps">Apps</a><a href="#contacto">Contactos</a></nav>
+  <a class="nav-cta" href="#contacto">Contactos <span aria-hidden="true">↗</span></a>
+</header>
+<main>
+<section class="wrap hero">
+ <div>
+  <div class="eyebrow"><span class="dot"></span> Tecnologia · Presença digital</div>
+  <h1>Ideias digitais.<br>Resultados <span class="rotating-phrase" id="rotatingPhrase">que se notam.</span></h1>
+  <p class="hero-copy">Tecnologia, presença digital e estratégia de negócio. Uma visão prática sobre as ferramentas e soluções digitais que ajudam a simplificar processos, melhorar experiências e explorar novas possibilidades.</p>
+  <div class="hero-actions"><a class="button primary" href="#servicos">Explorar áreas de competência <span aria-hidden="true">↗</span></a><a class="button secondary" href="#sobre">Experiência e abordagem <span aria-hidden="true">↓</span></a></div>
+  <div class="micro-proof"><strong>20+ anos</strong><span>de experiência em tecnologia, negócio e transformação digital</span></div>
+ </div>
+ <div class="hero-art" aria-label="Áreas de trabalho digital">
+  <div class="art-top"><span>Ideia · Estratégia · Execução</span><span class="art-status">● Feito à medida</span></div>
+  <div class="art-heading">Tecnologia que<br><span>resolve problemas.</span></div>
+  <div class="hero-mini-grid">
+   <div class="hero-mini"><span class="mini-icon">↗</span><div><strong>Websites</strong><small>Presença digital</small></div></div>
+   <div class="hero-mini"><span class="mini-icon">▤</span><div><strong>Lojas online</strong><small>Comércio digital</small></div></div>
+   <div class="hero-mini"><span class="mini-icon">▯</span><div><strong>Apps móveis</strong><small>Experiências móveis</small></div></div>
+   <div class="hero-mini"><span class="mini-icon">✳</span><div><strong>Consultoria informática</strong><small>Tecnologia e negócio</small></div></div>
+  </div>
+ </div>
+</section>
+<section class="section" id="servicos"><div class="wrap">
+ <div class="section-head"><div><div class="kicker">Áreas de competência</div><h2>Uma visão prática do mundo digital.</h2></div><p class="section-intro">Uma seleção de áreas que cruzam tecnologia, experiência digital e visão de negócio.</p></div>
+ <div class="services">
+  <article class="service"><span class="service-number">01 / PRESENÇA</span><div class="service-icon">◫</div><h3>Websites</h3><p>Estrutura, conteúdo e experiência digital para apresentar informação de forma clara e consistente.</p><a class="service-link" href="#lojas">Explorar área ↗</a></article>
+  <article class="service"><span class="service-number">02 / COMÉRCIO</span><div class="service-icon">▤</div><h3>Lojas online</h3><p>Experiências de comércio digital, organização de conteúdos e ferramentas de gestão de produtos e encomendas.</p><a class="service-link" href="#lojas">Explorar área ↗</a></article>
+  <article class="service"><span class="service-number">03 / MOBILIDADE</span><div class="service-icon">▯</div><h3>Aplicações móveis</h3><p>Aplicações e experiências móveis pensadas para diferentes contextos de utilização.</p><a class="service-link" href="#apps">Explorar área ↗</a></article>
+  <article class="service"><span class="service-number">04 / ORIENTAÇÃO</span><div class="service-icon">⌁</div><h3>Consultoria informática</h3><p>Análise de necessidades, avaliação de ferramentas e reflexão sobre opções tecnológicas adequadas.</p><a class="service-link" href="#sobre">Explorar área ↗</a></article>
+  <article class="service"><span class="service-number">05 / PROTEÇÃO</span><div class="service-icon">⬡</div><h3>Cibersegurança</h3><p>Boas práticas, proteção de acessos, cópias de segurança e redução dos riscos digitais mais comuns.</p><a class="service-link" href="#sobre">Explorar área ↗</a></article>
+  <article class="service"><span class="service-number">06 / EFICIÊNCIA</span><div class="service-icon">⤴</div><h3>Processos e integrações</h3><p>Ligação entre ferramentas e simplificação de tarefas para melhorar os fluxos de informação.</p><a class="service-link" href="#sobre">Explorar área ↗</a></article>
+  <article class="service"><span class="service-number">07 / CRESCIMENTO</span><div class="service-icon">◎</div><h3>Estratégia digital e SEO</h3><p>Presença online coerente, conteúdo relevante e princípios de otimização para motores de pesquisa.</p><a class="service-link" href="#sobre">Explorar área ↗</a></article>
+  <article class="service"><span class="service-number">08 / INFRAESTRUTURA</span><div class="service-icon">⌁</div><h3>Alojamento e email profissional</h3><p>Domínios, alojamento de websites e email profissional como componentes de uma presença digital.</p><a class="service-link" href="#sobre">Explorar área ↗</a></article>
+ </div>
+</div></section>
+<section class="section process" id="metodo"><div class="wrap process-grid">
+ <div class="process-copy"><div class="kicker">Uma abordagem prática</div><h2>Da necessidade à solução certa.</h2><p>Compreender o contexto, explorar possibilidades e identificar caminhos digitais claros, sem complexidade desnecessária.</p></div>
+ <div class="steps">
+  <div class="step"><span class="step-num">01</span><div><h3>Compreender</h3><p>Conhecer o contexto, os desafios e os objetivos envolvidos.</p></div></div>
+  <div class="step"><span class="step-num">02</span><div><h3>Explorar possibilidades</h3><p>Organizar ideias, comparar opções e identificar prioridades.</p></div></div>
+  <div class="step"><span class="step-num">03</span><div><h3>Aprender e melhorar</h3><p>Acompanhar a evolução das ferramentas digitais e refletir sobre a sua aplicação prática.</p></div></div>
+ </div>
+</div></section>
+<section class="section" id="lojas"><div class="wrap">
+ <div class="section-head"><div><div class="kicker">Lojas online</div><h2>O comércio também é uma experiência digital.</h2></div><p class="section-intro">Uma loja online combina apresentação de produtos, navegação, processo de compra e ferramentas de gestão, de acordo com o contexto de cada negócio.</p></div>
+ <div class="focus-grid">
+  <article class="focus-card featured"><div class="kicker">Experiência de compra</div><h3>Uma experiência simples e clara.</h3><p>Apresentação organizada dos produtos, navegação intuitiva e atenção aos elementos que ajudam a criar confiança.</p><div class="pill-row"><span class="pill">Catálogo</span><span class="pill">Encomendas</span><span class="pill">Experiência móvel</span></div></article>
+  <article class="focus-card"><div class="kicker">Organização e gestão</div><h3>Ferramentas ligadas à operação.</h3><p>Gestão de produtos e conteúdos, integrações adequadas e uma base técnica que acompanhe a evolução do comércio digital.</p><div class="pill-row"><span class="pill">Gestão de loja</span><span class="pill">Integrações</span><span class="pill">Processos</span></div></article>
+ </div>
+</div></section>
+<section class="section" id="apps"><div class="wrap">
+ <div class="section-head"><div><div class="kicker">Aplicações móveis</div><h2>Aplicações úteis, desenhadas à volta das pessoas.</h2></div><p class="section-intro">As aplicações móveis podem facilitar o acesso a informação, apoiar equipas e aproximar serviços de quem os utiliza.</p></div>
+ <div class="focus-grid">
+  <article class="focus-card featured"><div class="kicker">Experiências móveis</div><h3>Informação e funcionalidades sempre acessíveis.</h3><p>Interfaces móveis que dão prioridade à clareza, à facilidade de utilização e à consistência da experiência.</p><div class="pill-row"><span class="pill">Experiência móvel</span><span class="pill">Notificações</span><span class="pill">Serviços digitais</span></div></article>
+  <article class="focus-card"><div class="kicker">Tecnologia e processos</div><h3>Ferramentas digitais no contexto de trabalho.</h3><p>Aplicações que podem apoiar equipas, recolha de informação e processos de negócio, com ligação a sistemas existentes quando adequado.</p><div class="pill-row"><span class="pill">Processos</span><span class="pill">Integrações</span><span class="pill">Gestão</span></div></article>
+ </div>
+</div></section>
+<section class="section" id="sobre"><div class="wrap about">
+ <div class="about-mark"><small>Consultoria · Digital · Tecnologia</small><div class="brand-symbol-large" aria-hidden="true"><svg viewBox="0 0 160 160" fill="none"><rect x="8" y="8" width="144" height="144" rx="34" stroke="currentColor" stroke-opacity=".3" stroke-width="2"/><path d="M28 112V48h18l34 39 34-39h18v64h-22V81L80 112 50 81v31H28Z" fill="currentColor"/><circle cx="128" cy="29" r="9" fill="#bfcaff"/><path d="M113 29H99" stroke="#bfcaff" stroke-width="6" stroke-linecap="round"/></svg></div><small>Experiência que liga negócio e tecnologia.</small></div>
+ <div class="about-copy"><div class="kicker">Experiência e abordagem</div><h2>Experiência técnica. Visão de negócio.</h2><p>Com experiência em tecnologia desde 2004, o percurso cruza conhecimento técnico, soluções digitais e melhoria de processos em diferentes setores.</p><p>Esta experiência permite olhar para os desafios de forma abrangente: compreender o problema, explicar opções com clareza e identificar soluções que façam sentido para quem as utiliza e para quem gere o negócio.</p><div class="about-stats"><div><strong>20+</strong><span>anos de experiência</span></div><div><strong>Negócio + IT</strong><span>duas perspetivas, uma solução</span></div><div><strong>Prático</strong><span>foco no que acrescenta valor</span></div></div></div>
+</div></section>
+<section class="wrap contact" id="contacto"><div class="contact-panel"><div><div class="kicker">Contacto</div><h2>Um ponto de contacto para o mundo digital.</h2><p>Para questões relacionadas com tecnologia, presença digital ou para conhecer melhor as áreas aqui apresentadas, está disponível o seguinte contacto por email.</p><a class="contact-email" href="mailto:geral@marcioborges.pt"><span aria-hidden="true">✉</span> geral@marcioborges.pt</a></div></div></section>
+</main>
+<footer class="wrap footer">
+	<span>© <span id="year">2026</span> Márcio Borges. Todos os direitos reservados.</span>
+	<span>Tecnologia · Presença digital · Estratégia</span>
+	
+	<span class="footer-links">
+		<a href="privacidade.html">Política de Privacidade</a>
+		<a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank">Livro de Reclamações</a>
+		<a href="#top">Voltar ao topo ↑</a></span>
+	</footer>
 </div>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
